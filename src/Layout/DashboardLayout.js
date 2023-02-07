@@ -1,11 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "../Components/Dashboard/Sidebar";
 
 const DashboardLayout = () => {
   return (
     <div className="md:flex min-h-screen">
       <Sidebar />
-      <div className="bg-red-500 flex-1">Content</div>
+      <div className=" flex-1">
+        <div className="p-5">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };
