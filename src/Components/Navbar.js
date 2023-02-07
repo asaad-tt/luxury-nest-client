@@ -15,7 +15,7 @@ const Navbar = () => {
           to="/"
           className="flex title-font font-medium items-center text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-lime-500 mb-4 md:mb-0"
         >
-          <span className="ml-3 text-2xl font-bold ">The Luxury Nest</span>
+          <span className="ml-3 text-2xl font-bold ">Aircnc</span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           {user?.email ? (
@@ -38,7 +38,7 @@ const Navbar = () => {
                 {isDropdownOpen && (
                   <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl ">
                     <Link
-                      to="/Dashboard"
+                      to="/dashboard"
                       className="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform  hover:bg-gray-100 "
                     >
                       <svg
@@ -62,7 +62,10 @@ const Navbar = () => {
 
                     <hr className="border-gray-200" />
                     <div
-                      onClick={logout}
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        logout();
+                      }}
                       className="flex items-center cursor-pointer p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform  hover:bg-gray-100 "
                     >
                       <svg
