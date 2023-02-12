@@ -16,7 +16,9 @@ import MyBookings from "../Pages/Dashboard/MyBookings";
 import BecomeAHost from "../Pages/Dashboard/BecomeAHost";
 import AllUsers from "../Pages/Dashboard/AllUsers";
 import AllBookings from "../Pages/Dashboard/AllBookings";
-import AddHome from "../Pages/AddHome";
+import AddHome from "../Pages/Dashboard/AddHome";
+import ManageHomes from "../Pages/Dashboard/ManageHomes";
+import AllHome from "../Pages/AllHome";
 
 const router = createBrowserRouter([
   {
@@ -37,12 +39,18 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        path: "/all-homes",
+        element: <AllHome />,
+      },
+      {
         path: "/coming-soon",
         element: <ComingSoon />,
       },
       {
-        path: "/service-details",
+        path: "/service-details/:id",
         element: <Details />,
+        loader: ({ params }) =>
+          fetch(`${process.env.REACT_APP_API_URL}/home/${params.id}`),
       },
       {
         path: "/search-result",
@@ -109,6 +117,10 @@ const router = createBrowserRouter([
             <AddHome />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "manage-homes",
+        element: <ManageHomes />,
       },
     ],
   },
