@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCMXK0UxSM-cJ2O2e62WiNEFY5R8p3ORjM",
-  authDomain: "luxury-nest.firebaseapp.com",
-  projectId: "luxury-nest",
-  storageBucket: "luxury-nest.appspot.com",
-  messagingSenderId: "84079283726",
-  appId: "1:84079283726:web:1afd95dee13de59443f65f",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);
