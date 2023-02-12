@@ -4,7 +4,7 @@ export const addHome = async (homeData) => {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("aircnc-token")}`,
+      authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
     },
     body: JSON.stringify(homeData),
   });
@@ -28,7 +28,7 @@ export const getHomes = async (email) => {
       method: "GET",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("aircnc-token")}`,
+        authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
       },
     }
   );
@@ -42,7 +42,7 @@ export const updateHome = async (homeData) => {
     method: "PUT",
     headers: {
       "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("aircnc-token")}`,
+      authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
     },
     body: JSON.stringify(homeData),
   });
@@ -57,7 +57,7 @@ export const deleteHome = async (id) => {
     method: "DELETE",
     headers: {
       "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("aircnc-token")}`,
+      authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
     },
   });
   const result = await response.json();

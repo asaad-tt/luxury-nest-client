@@ -18,3 +18,15 @@ export const setAuthToken = (user) => {
       localStorage.setItem("luxuryNest-token", data.token);
     });
 };
+
+export const saveBooking = (bookingData) => {
+  // Post method fetch
+  return fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
+    },
+    body: JSON.stringify(bookingData),
+  });
+};

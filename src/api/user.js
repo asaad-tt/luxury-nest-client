@@ -1,40 +1,49 @@
-export const hostRequest = async (hostData) => {
-  const url = `${process.env.REACT_APP_API_URL}/user/${hostData?.email}`;
-
-  const response = await fetch(url, {
-    method: "PUT",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(hostData),
-  });
-
+export const hostRequest = async (user) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}/user/${user?.email}`,
+    {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
+      },
+      body: JSON.stringify(user),
+    }
+  );
   const data = await response.json();
-
+  console.log(data);
   return data;
 };
 
-// Get user role
 export const getRole = async (email) => {
-  const url = `${process.env.REACT_APP_API_URL}/user/${email}`;
-
-  const response = await fetch(url);
-
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}/user/${email}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
+      },
+    }
+  );
   const user = await response.json();
-
   return user?.role;
 };
 
-// Get All Users
 export const getAllUsers = async () => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/users`);
-
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
+    },
+  });
+  console.log("test");
   const users = await response.json();
 
   return users;
 };
 
-// approve host
 export const makeHost = async (user) => {
   delete user._id;
   const response = await fetch(
@@ -43,6 +52,7 @@ export const makeHost = async (user) => {
       method: "PUT",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("luxuryNest-token")}`,
       },
       body: JSON.stringify({ ...user, role: "host" }),
     }

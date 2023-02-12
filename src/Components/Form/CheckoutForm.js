@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { saveBooking } from "../../api/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -7,8 +7,8 @@ import { getPaymentIntent } from "../../api/bookings";
 
 const CheckoutForm = ({ bookingData }) => {
   const navigate = useNavigate();
-// //   const stripe = useStripe();
-//   const elements = useElements();
+  const stripe = useStripe();
+  const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");

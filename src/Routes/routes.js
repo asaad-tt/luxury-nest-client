@@ -11,14 +11,16 @@ import SearchResult from "../Pages/SearchResult";
 import Checkout from "../Pages/Checkout";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../Layout/DashboardLayout";
-import Welcome from "../Pages/Dashboard/Welcome";
 import MyBookings from "../Pages/Dashboard/MyBookings";
 import BecomeAHost from "../Pages/Dashboard/BecomeAHost";
+import Welcome from "../Pages/Dashboard/Welcome";
 import AllUsers from "../Pages/Dashboard/AllUsers";
-import AllBookings from "../Pages/Dashboard/AllBookings";
 import AddHome from "../Pages/Dashboard/AddHome";
 import ManageHomes from "../Pages/Dashboard/ManageHomes";
+import AllBookings from "../Pages/Dashboard/AllBookings";
 import AllHome from "../Pages/AllHome";
+import AdminRoute from "./AdminRoute";
+import HostRoute from "./HostRoute";
 
 const router = createBrowserRouter([
   {
@@ -58,16 +60,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: (
-          <PrivateRoute>
-            <Checkout />
-          </PrivateRoute>
-        ),
+        element: <Checkout />,
       },
     ],
   },
   {
     path: "/dashboard",
+    errorElement: <ErrorPage />,
     element: (
       <PrivateRoute>
         <DashboardLayout />
@@ -76,7 +75,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Welcome />,
+        element: (
+          <PrivateRoute>
+            <Welcome />
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-bookings",
@@ -97,30 +100,34 @@ const router = createBrowserRouter([
       {
         path: "all-users",
         element: (
-          <PrivateRoute>
+          <AdminRoute>
             <AllUsers />
-          </PrivateRoute>
+          </AdminRoute>
         ),
       },
       {
         path: "all-bookings",
         element: (
-          <PrivateRoute>
+          <AdminRoute>
             <AllBookings />
-          </PrivateRoute>
+          </AdminRoute>
         ),
       },
       {
         path: "add-home",
         element: (
-          <PrivateRoute>
+          <HostRoute>
             <AddHome />
-          </PrivateRoute>
+          </HostRoute>
         ),
       },
       {
         path: "manage-homes",
-        element: <ManageHomes />,
+        element: (
+          <HostRoute>
+            <ManageHomes />
+          </HostRoute>
+        ),
       },
     ],
   },

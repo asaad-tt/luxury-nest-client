@@ -22,6 +22,7 @@ const SearchForm = () => {
     console.log(query);
     navigate("/search-result", { state: query });
   };
+
   return (
     <div className="w-full max-w-sm p-6 m-auto mx-auto">
       <h1 className="text-xl font-semibold text-gray-700">
@@ -38,9 +39,9 @@ const SearchForm = () => {
           </label>
           <input
             type="text"
-            name="location"
             value={location}
             onChange={(event) => setLocation(event.target.value)}
+            name="location"
             required
             placeholder="Add city, Landmark or address"
             className="block w-full mt-1 p-1 text-gray-700 bg-white   focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"

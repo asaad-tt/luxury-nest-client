@@ -49,6 +49,7 @@ const Signup = () => {
                   toast.success(
                     "Please check your email for verification link."
                   );
+                  setLoading(false);
                   navigate(from, { replace: true });
                 })
               )
@@ -67,6 +68,7 @@ const Signup = () => {
     signInWithGoogle().then((result) => {
       console.log(result.user);
       setAuthToken(result.user);
+      setLoading(false);
       navigate(from, { replace: true });
     });
   };
@@ -103,7 +105,7 @@ const Signup = () => {
                 Select Image:
               </label>
               <input
-                // required
+                required
                 type="file"
                 id="image"
                 name="image"
