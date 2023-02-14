@@ -1,16 +1,16 @@
 [
   {
     "title": "Hiking like never before",
-    "location": "Bandarban",
-    "image": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
+    "location": "Switzerland",
+    "image": "https://i.ibb.co/v1QmDgb/hiking.jpg",
     "price": 57,
     "host": "John Doe",
     "rating": "64"
   },
   {
-    "title": "Sky Diving like never before",
-    "location": "Dubai",
-    "image": "https://i.ibb.co/2jb4bvR/Experience3.jpg",
+    "title": "Water fall spread its beauty",
+    "location": "Newzeland",
+    "image": "https://i.ibb.co/HKNY16B/fountain.jpg",
     "price": 157,
     "host": "Max Mars",
     "rating": "43"
@@ -24,9 +24,9 @@
     "rating": "34"
   },
   {
-    "title": "See Sunset in the beach",
-    "location": "Rangamati",
-    "image": "https://i.ibb.co/bB98pjR/Experience1.jpg",
+    "title": "Beauty of mountain",
+    "location": "nepal",
+    "image": "https://i.ibb.co/sQh9kFt/averest.jpg",
     "price": 98,
     "host": "John Doe",
     "rating": "97"

@@ -24,11 +24,11 @@ const HomeCard = ({ home }) => {
         </h2>
         <p className="mt-1">${home?.price} per person</p>
         <div className="flex mt-1">
-          <StarIcon className="h3 w-3 text-green-500" />
-          <StarIcon className="h3 w-3 text-green-500" />
-          <StarIcon className="h3 w-3 text-green-500" />
-          <StarIcon className="h3 w-3 text-green-500" />
-          <StarIcon className="h3 w-3 text-green-500" /> <span>64</span>
+          <StarIcon className="h3 w-3 text-purple-500" />
+          <StarIcon className="h3 w-3 text-purple-500" />
+          <StarIcon className="h3 w-3 text-purple-500" />
+          <StarIcon className="h3 w-3 text-purple-500" />
+          <StarIcon className="h3 w-3 text-purple-500" /> <span>64</span>
         </div>
       </div>
     </div>
